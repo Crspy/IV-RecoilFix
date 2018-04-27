@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{9cacceba-2b52-46a8-9a27-ca943f83743b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\injector">
+      <UniqueIdentifier>{810f3e91-5d8f-4ee9-bafe-979f9f08dcd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\injector\gvm">
+      <UniqueIdentifier>{bdcba1f6-9b2c-43e0-8a3f-70875545e2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecoilFix">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="shared\IniReader">
+      <UniqueIdentifier>{49fd6c03-1ee8-4ffc-b390-a9a8f6b79b62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\Patterns">
+      <UniqueIdentifier>{98be758e-f053-409d-af19-bbdfbdbcf6f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shared\injector\gvm\gvm.hpp">
+      <Filter>shared\injector\gvm</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\injector\gvm\translator.hpp">
+      <Filter>shared\injector\gvm</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\injector\assembly.hpp">
+      <Filter>shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\injector\calling.hpp">
+      <Filter>shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\injector\hooking.hpp">
+      <Filter>shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\injector\injector.hpp">
+      <Filter>shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\injector\utility.hpp">
+      <Filter>shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="RecoilFix.h">
+      <Filter>RecoilFix</Filter>
+    </ClInclude>
+    <ClInclude Include="Patch.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\IniReader\ini_parser.hpp">
+      <Filter>shared\IniReader</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\IniReader\IniReader.h">
+      <Filter>shared\IniReader</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\Patterns\Patterns.h">
+      <Filter>shared\Patterns</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RecoilFix.cpp">
+      <Filter>RecoilFix</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>RecoilFix</Filter>
+    </ClCompile>
+    <ClCompile Include="Patch.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\Patterns\Patterns.cpp">
+      <Filter>shared\Patterns</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
