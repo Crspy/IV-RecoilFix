@@ -1,5 +1,5 @@
 # IV-RecoilFix
 
 #Credits:
--jenksta
--Crspy
+jenksta
+Crspy
