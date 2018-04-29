@@ -6,11 +6,6 @@ private:
     static unsigned int base_address;
 
 public:
-    Patch() {
-    base_address = reinterpret_cast<unsigned int>(GetModuleHandleA(NULL));
-    }
-
-
     inline static unsigned int GetGlobalAddress(unsigned int address) {
     return base_address - 0x400000 + address;
     }
@@ -142,36 +137,11 @@ enum eGameVersion
 class GameVersion
 {
     static eGameVersion m_nGameVersion;
-public:
-    GameVersion()
-    {
-        switch (Patch::GetUInt(0x401230 + 2))
-        {
-        case 0xC200050D:
-            m_nGameVersion = eGameVersion::IV_1_0_4_0;
-            break;
-        case 0xC2001A99:
-            m_nGameVersion = eGameVersion::IV_1_0_7_0;
-            break;
-        case 0xC068006A:
-            m_nGameVersion = eGameVersion::IV_1_0_8_0;
-            break;
-        case 0x3068006A:
-            m_nGameVersion = eGameVersion::EFLC_1_1_2_0;
-            break;
-        case 0xC2001A6B:
-            m_nGameVersion = eGameVersion::EFLC_1_1_3_0;
-            break;
-        default:
-            m_nGameVersion = eGameVersion::UNKNOWN_VERSION;
-            break;
-        }
-    }
+
 public:
     static eGameVersion Get()
     {
         return m_nGameVersion;
     }
-
 
 };
