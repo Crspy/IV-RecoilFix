@@ -68,26 +68,42 @@ public:
 
     template <typename T, bool IsGlobalAddress>
     static T TranslateCallOffset(int address) {
-        if (GetUChar(address) == 0xE8) {
-            auto offset = GetInt(address + 1);
-            if (IsGlobalAddress)
+        if (IsGlobalAddress)
+        {
+            if (Get<unsigned char, true>(address) == 0xE8) {
+                auto offset = Get<int, true>(address + 1);
                 offset += (address + 5);
-            else
+                return reinterpret_cast<T>(offset);
+            }
+        }
+        else
+        {
+            if (Get<unsigned char, false>(address) == 0xE8) {
+                auto offset = Get<int, false>(address + 1);
                 offset += (GetGlobalAddress(address) + 5);
-            return reinterpret_cast<T>(offset);
+                return reinterpret_cast<T>(offset);
+            }
         }
         return nullptr;
     }
 
     template <typename T, bool IsGlobalAddress>
     static T TranslateJumpOffset(int address) {
-        if (GetUChar(address) == 0xE9) {
-            auto offset = GetInt(address + 1);
-            if (IsGlobalAddress)
+        if (IsGlobalAddress)
+        {
+            if (Get<unsigned char, true>(address) == 0xE9) {
+                auto offset = Get<int, true>(address + 1);
                 offset += (address + 5);
-            else
+                return reinterpret_cast<T>(offset);
+            }
+        }
+        else
+        {
+            if (Get<unsigned char, false>(address) == 0xE9) {
+                auto offset = Get<int, false>(address + 1);
                 offset += (GetGlobalAddress(address) + 5);
-            return reinterpret_cast<T>(offset);
+                return reinterpret_cast<T>(offset);
+            }
         }
         return nullptr;
     }
