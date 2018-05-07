@@ -225,6 +225,7 @@ enum eGameVersion
 {
     UNKNOWN_VERSION,
     IV_1_0_4_0,
+    IV_1_0_0_4,
     IV_1_0_7_0,
     IV_1_0_8_0,
     EFLC_1_1_2_0,

@@ -1,14 +1,16 @@
 #include "Patch.h"
 
-unsigned int Patch::m_nBaseAddress = []() {
+unsigned int Patch::m_nBaseAddress = []() {  
     return reinterpret_cast<unsigned int>(GetModuleHandleA(NULL));
-}();
+}(); // must be initialized first
 
 eGameVersion GameVersion::m_nGameVersion = []() {
     switch (Patch::GetUInt<false>(0x401230 + 2))
     {
     case 0xC200050D:
         return eGameVersion::IV_1_0_4_0;
+    case 0x6868006A:
+        return eGameVersion::IV_1_0_0_4;
     case 0xC2001A99:
         return eGameVersion::IV_1_0_7_0;
     case 0xC068006A:
